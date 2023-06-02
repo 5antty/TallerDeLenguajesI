@@ -3,6 +3,7 @@
 #include <time.h>
 
 void reservaMem(int **p, int n);
+int *reservaMem2(int n);
 void incializacion(int *a, int n);
 int maximo(int *a, int n);
 
@@ -14,10 +15,10 @@ int main()
     scanf("%d", &n);
     reservaMem(&arreglo, n);
     incializacion(arreglo, n);
-    /*for (i = 0; i < n; i++)
+    for (i = 0; i < n; i++)
     {
         printf("%d\n", arreglo[i]);
-    }*/
+    }
     printf("El maximo num del arreglo es: %d", maximo(arreglo, n));
     free(arreglo);
     return 0;
@@ -30,10 +31,11 @@ void reservaMem(int **p, int n)
 }
 
 // Reserva mediante retorno de puntero
-int *reservaMem(int n)
+int *reservaMem2(int n)
 {
     int *p;
-    *p = (int *)calloc(n, sizeof(int));
+    p = (int *)calloc(n, sizeof(int));
+    return p;
 }
 
 void incializacion(int *a, int n)
