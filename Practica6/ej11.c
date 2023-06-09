@@ -11,4 +11,8 @@ int main()
 
     eliminarPalabra(&diccionary, "fisica");
     mostrarDic(diccionary);
+    FILE *f = fopen("diccionario.txt", "r+");
+    // guardarArchivo(diccionary, &f);
+    cargarArchivo(&diccionary, f);
+    mostrarDic(diccionary);
 }

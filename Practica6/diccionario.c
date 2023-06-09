@@ -22,7 +22,6 @@ void agregarPalabra(dic *d, char p[LONG])
 {
     if (!existe(*d, p))
     {
-        printf("entro con %s", p);
         dic nuevo = (dic)malloc(sizeof(nodo));
         strcpy(nuevo->palabra, p);
         nuevo->sig = NULL;
@@ -97,7 +96,7 @@ void mostrarDic(dic d)
 {
     while (d != NULL)
     {
-        printf("%s", d->palabra);
+        printf("%s\n", d->palabra);
         d = d->sig;
     }
 }
